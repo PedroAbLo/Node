@@ -1,6 +1,30 @@
-import * as fs from "fs";
+let fs = require('fs/promises');
+// let readline = require('readline')
 
 
+function readAndWrite(obj){
+
+  const archivo = new Promise((resolve,rejects)=>{
+    let objeto = JSON.stringify(obj);
+    fs.writeFile('object.json', objeto)
+      .then(()=>{
+        return fs.readFile('object.json','utf-8')
+      })
+      .then((data)=>{
+        resolve(JSON.parse(data));
+      })
+      .catch((err) =>{
+        rejects(err);
+      })
+  })
+  return archivo;
+}
+
+module.exports = { readAndWrite}
+
+
+
+// PRUEBA1-VARIAS
 // export function escribir(obj){
 
 //     const escritura = new Promise((resolve,reject)=>{
@@ -23,7 +47,7 @@ import * as fs from "fs";
     // return escritura;
 // }
 
-
+// PRUEBA 2
 
 //     let objeto = JSON.stringify(obj);  
 //     fs.writeFile('object.json', objeto, (err) => {
@@ -35,28 +59,28 @@ import * as fs from "fs";
 //         });
 //     });
 
+// CON DOS FUNCIONES LEER Y ESCRIBIR
 
-
-export function leer (fichero) {
-    return new Promise(function (resolve, reject) {
-      fs.readFile(fichero, 'utf8',(err, data)=> {
-        if (err) {
-          reject(err)
-        } else {
-          resolve(data)
-        }
-      })
-    })
-  }
+// export function leer (fichero) {
+//     return new Promise(function (resolve, reject) {
+//       fs.readFile(fichero, 'utf8',(err, data)=> {
+//         if (err) {
+//           reject(err)
+//         } else {
+//           resolve(data)
+//         }
+//       })
+//     })
+//   }
   
-  export function escribir (fichero, data) {
-    return new Promise((resolve, reject)=> {
-      fs.writeFile(fichero, data,(err)=> {
-        if (err) {
-          reject(err)
-        } else {
-          resolve()
-        }
-      })
-    })
-  }
+//   export function escribir (fichero, data) {
+//     return new Promise((resolve, reject)=> {
+//       fs.writeFile(fichero, data,(err)=> {
+//         if (err) {
+//           reject(err)
+//         } else {
+//           resolve()
+//         }
+//       })
+//     })
+//   }
