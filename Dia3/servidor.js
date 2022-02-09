@@ -10,8 +10,7 @@ const server = http.createServer((request,response)=>{
     console.log('User-agent: ' + request.headers['user-agent']);
     response.writeHead(200,{"ok":"true", "message":"Recibido!"})
 
-    let url = request.url;
-    if(url == "/bye"){
+    if(request.url == "/bye"){
         let mensaje = {
             "statusCode": 200,
             "message":{"ok":true, "message":"Adios!"}
