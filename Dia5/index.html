@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesionales</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+    <!--Navegador-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Profesionales</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Actores</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <!--Tabla-->
+
+    <div class="container ">
+        <div class="row">
+            <div class="table table-striped table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Nacionalidad</th>
+                            <th scope="col">Oscars</th>
+                            <th scope="col">Retirado?</th>
+                            <th scope="col">Profesion</th>
+                            <th scope="col">Altura</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Color Pelo</th>
+                            <th scope="col">Color Ojos</th>
+                            <th scope="col">Raza</th>
+                        </tr>
+                      </thead>
+                      <h3>-----------------------------------------------------------------------------------------------------</h3>
+                      <tbody id="actores--tabla">
+
+                      </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+    <br>
+
+
+    <!-- Formulario -->
+    <br><br>
+
+    <div class="container d-flex justify-content-center">
+        <form class ="col-8 " >
+            <h2 class=" p-3 mb-2 bg-dark text-white text-center ">Formulario</h2><br>
+            <div class="col-2">
+              </div>
+            <div class="form-group" id="nuevo-actor">
+                <div class="form-row">
+                    <div class="form-group col-md-1">
+                      <label id="id">Id</label>
+                      <input type="number" class="form-control" id="id--actor" placeholder="Id...">
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label id="nombre">Nombre</label>
+                      <input type="text" class="form-control" id="nombre--actor" placeholder="Nombre...">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label id="edad">Edad</label>
+                        <input type="number" class="form-control" id="edad--actor" placeholder="Edad...">
+                      </div>
+                    <div class="form-group col-md-2">
+                    <label for="inputState" id="retirado">¿Retirado</label>
+                    <select id="retirado--actor" class="form-control">
+                        <option selected>False</option>
+                        <option>True</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label id="oscars">Oscars</label>
+                        <input type="number" class="form-control" id="oscar-actor" placeholder="Nº Oscars...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label id="genero">Género</label>
+                        <input type="text" class="form-control" id="genero--actor" placeholder="Género...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label id="peso">Peso</label>
+                        <input type="text" class="form-control" id="peso--actor" placeholder="Peso...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label id="altura">Altura</label>
+                        <input type="text" class="form-control" id="altura--actor" placeholder="Altura...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label id="raza">Raza</label>
+                        <input type="text" class="form-control" id="raza--actor" placeholder="Raza...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label id="pelo">Color Pelo</label>
+                        <input type="text" class="form-control" id="pelo--actor" placeholder="Color Pelo...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label id="ojos">Color Ojos</label>
+                        <input type="text" class="form-control" id="ojos--actor" placeholder="Color Ojos...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Nacionalidad</label>
+                        <input type="text" class="form-control" id="nacionalidad--actor" placeholder="Nacionalidad...">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label id="profesion">Profesión</label>
+                        <input type="text" class="form-control" id="profesion--actor" placeholder="Profesión...">
+                    </div>
+                </div>
+              </div>
+            </div>
+        </form>
+          <br>
+          <div class="container d-flex justify-content-center">
+            <button type="button" id="mostrar--actor" class="btn btn-light btn-lg mb-">Mostrar</button>
+            <button type="button" id="crear--actor" class="btn btn-light btn-lg mb-">Crear</button>
+            <button type="button" id="actualizar--actor" class="btn btn-light btn-lg mb-">Actualizar</button>
+            <button type="button" id="eliminar--actor" class="btn btn-light btn-lg mb-">Eliminar</button>
+          </div>          
+    </div>
+
+
+
+<!--FOOTER-->
+<br><br>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+    </div>
+</footer>
+<script src="prof.js" defer></script>    
+</body>
+</html>
