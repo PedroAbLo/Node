@@ -1,8 +1,9 @@
-
+// const { profesionales } = require("./profesionales");
+'use strict';
 
 
     document.getElementById("mostrar--actor").addEventListener("click", getActores, false);
-    document.getElementById("crear-actor").addEventListener("click", postActor , false);
+    document.getElementById("crear--actor").addEventListener("click", postActor , false);
     document.getElementById("actualizar-actor").addEventListener("click", putActor, false);
     document.getElementById("eliminar-actor").addEventListener("click", deleteActor , false);
 
@@ -29,6 +30,19 @@
     
         }
     }
+    let actor1 = new Professional("Brad Pitt", 58, "masculino", 78, 180, "rubio", "azules", "blanca", false, "americana", 2, "actor", "img\bradPitt.png");
+    let actor2 = new Professional("Denzel Washington", 67, "masculino", 78, 185, "negro", "marrones", "negra", false, "americana", 2, "actor", "img\denzel.png");
+    let actor3 = new Professional("Scarlett Johansson", 37, "femenino", 48, 163, "rubio", "azules", "blanco", false, "americana", 0, "actriz", ".img\scarlett.png");
+    let actor4 = new Professional("Angelina Jolie", 46, "femenino", 54, 169, "castaño", "azules", "blanco", false, "americana", 2, "actriz", ".img\angelina.png");
+    let actor5 = new Professional("Sophia Loren", 87, "femenino", 59, 174, "castaño", "marron", "blanco", true, "italiana", 2, "actriz", ".img\sophia.png");
+    
+    let profesionales = [actor1,actor2,actor3,actor4];
+
+
+
+
+
+
 //get con fetch
 async function getActores(){
     let id = document.getElementById("id--actor").value;
@@ -45,9 +59,17 @@ async function getActores(){
     try{
         let data = await fetch(url, param)
         let result = await data.json();
-        // document.getElementById("").innerHTML = JSON.stringify(result[0]);
-        console.log(result)
-        mostrarTabla(result);
+        console.log("a")
+        if(Array.isArray(result)==true){
+            console.log(result);
+            mostrarTabla(result);
+        }else{
+            let arrayNuevo = [];
+            arrayNuevo.push(result);
+            console.log(arrayNuevo)
+            mostrarTabla(arrayNuevo);
+        }
+
     } catch(e){
         console.log(e);
     }
@@ -56,7 +78,9 @@ async function getActores(){
 //post con fetch
 
 async function postActor(){
+    console.log("Adios")
     try{
+        'use strict';
         let profesional = new Professional(document.getElementById("id").value,
         document.getElementById("nombre").value,
         document.getElementById("edad").value,
@@ -93,6 +117,7 @@ async function postActor(){
 
 async function putActor(){
     try{
+        'use strict';
         let profesional = new Professional(document.getElementById("id").value,
         document.getElementById("nombre").value,
         document.getElementById("edad").value,
